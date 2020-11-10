@@ -12,7 +12,7 @@
         <h1>{{ $user->username }}</h1>
         <a href="#" class="btn btn-primary">Follow</a>
         </div>
-        <a href="#">Add new post</a>
+        <a href="/p/create">Add new post</a>
       </div>
         <div class="d-flex">
           <div class="pr-5"><strong>120</strong> posts</div>

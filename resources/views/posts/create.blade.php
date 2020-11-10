@@ -3,11 +3,17 @@
 @section('content')
 <div class="container">
   <div class="row">
-    <h1>
-      Add New Post
-    </h1>
+    <div class="col-10">
+      <div class="text-center">
+        <h1>
+          Add New Post
+        </h1>
+      </div>
+    </div>
   </div>
-  <form action="post">
+
+  <form action="/p" enctype="multipart/form-data" method="post" >
+  @csrf
     <div class="row">
       <div class="col-8 offest-2">
 
@@ -28,9 +34,7 @@
           <input type="file" class="form-control-file" id="image" name="image">
 
             @error('image')
-              <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
-              </span>
             @enderror
         </div>
 
