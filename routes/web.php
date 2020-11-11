@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\PostsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,9 +20,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/p/{post}', 'PostsController@show');
-Route::get('/p/create', 'PostsController@create');
-Route::post('/p', 'PostsController@store');
+Route::get('/p/create', 'App\Http\Controllers\PostsController@create');
+Route::get('/p/{post}', 'App\Http\Controllers\PostsController@show');
+Route::post('/p', 'App\Http\Controllers\PostsController@store');
 
 Route::get('/profile/{user}', [App\Http\Controllers\ProfilesController::class, 'index'])->name('profile.show');
 Route::get('/profile/{user}/edit', [App\Http\Controllers\ProfilesController::class, 'edit'])->name('profile.edit');

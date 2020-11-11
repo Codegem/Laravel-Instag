@@ -4,22 +4,25 @@
 <div class="container">
   <div class="row">
     <div class="col-4 pt-5 ml-5">
-        <img src="https://cdn.jpegmini.com/user/images/slider_puffin_jpegmini_mobile.jpg"alt="profile" style="border-radius: 50%; width:10rem">
+        <img src="{{ $user->profile->profileImage() }}" alt="" class="rounded-circle w-50">
     </div>
     <div class="col-6 pt-5">
+
       <div class="d-flex justify-content-between align-items-baseline">
-        <div>
-        <h1>{{ $user->username }}</h1>
-        <a href="#" class="btn btn-primary">Follow</a>
+        <div class="d-flex align-items-center pb-3">
+          <h3>{{ $user->username }}</h3>
+          <follow-button></follow-button>
         </div>
         <a href="/p/create">Add new post</a>
         <a href="/profile/{{$user->id}}/edit">Edit Profile</a>
       </div>
+
         <div class="d-flex">
           <div class="pr-5"><strong>{{ $user->posts->count() }}</strong> posts</div>
           <div class="pr-5"><strong>23K</strong> followers</div>
           <div class="pr-5"><strong>236</strong> following</div>
         </div>
+
         <div class="mt-2">{{ $user->profile->title ?? 'N/A'}}</div>
         <div>
             {{ $user->profile->description ?? 'N/A'}}

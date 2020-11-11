@@ -54,7 +54,7 @@
                             @endif
                         @else
                             <li class="nav-item dropdown d-flex">
-                                <img src="https://cdn.jpegmini.com/user/images/slider_puffin_jpegmini_mobile.jpg" alt="" style="border-radius: 50%; width:2rem">
+                                <img src="{{ $user->profile->profileImage() }}" alt="" style="border-radius: 50%; width:2rem">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
